@@ -1,0 +1,149 @@
+
+/* nhớ reset css để tránh khỏi các chức năng mặc định của css
+  |
+  v */
+*{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+  /* co giản theo padding margin ko ảnh hưởng theo cái content */
+}
+
+
+
+
+body{
+background: #EEAECA;
+background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+min-height: 100vh;
+color: white;
+}
+/* --------------------------------------------------------- Header ---------------------------------------- */
+header{
+  /* background-color: red; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo{
+  font-size: 65px;
+  background: linear-gradient(269deg, rgb(237, 174, 237) 0%, rgba(9, 9, 121, 1) 35%, rgb(52, 202, 232) 100%);
+  background-clip: text;
+  color: transparent;
+  /* color transparent chữ trong suốt */
+}
+nav ul{
+  display: flex;
+  list-style: none;
+  /* ul list-style phong cách của thẻ  */
+  gap: 25px;
+}
+ul a{
+  text-decoration: none;
+/* text decoration phong cánh của chữ như gạch dưới, v,v */
+  color: white;
+
+}
+.button {
+  padding: 12px 25px;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  background: rgb(236, 199, 231);
+  /* con trỏ để chỉ chổ bấm dc hay ko cursor  */
+  cursor: pointer;
+  /* transition để làm thay đổi sự nhanh hay chậm của button
+   */
+   transition: all 0.4s ease;
+   /* ease: chậm
+   ease-in: từ từ nhanh lên
+   ease-out: chậm ở đầu nhanh ở cuối */
+  
+}
+.button span{
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.container{
+max-width: 1200px;
+/* căng giữa các phần tử mà ko cần dùm flex  margin: 0 auto*/
+margin: 0 auto; 
+padding: 20px;
+}
+/* ------------------------------------------ Main ---------------------------- */
+
+main{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 50px;
+  size: 30px;
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.content h1{
+  font-size: 65px;
+}
+.content h1 span{
+background: #020024;
+background: linear-gradient(269deg,rgb(97, 42, 103) 13%, rgb(108, 3, 104) 51%, rgb(14, 173, 236) 100%);
+background-clip: text;
+color: transparent;
+}
+ /* c1 .content p:nth-of-type(1){
+  font-size: 45px;
+} *  
+chỉ sử dụng khi bên content bị khóa ko thêm dc thứ gì  */
+/* c2 */
+.content p:nth-child(2){
+  font-size: 35px;
+  color: rgb(76, 2, 79);
+}
+
+.content p:nth-of-type(2){
+  font-size:20px ;
+  color: rgb(69, 7, 70);
+}
+.readMore{
+  background-color: transparent;
+  border: 1.5px solid white;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+/* hover là hiệu ứng chuyển động motion  */
+.start:hover{
+  transform: translateY(-3px);
+  box-shadow: rgba(62, 20, 57, 0.25) 0px 50px 100px -20px, rgba(117, 96, 96, 0.3) 0px 30px 60px -30px;
+}
+/* before la truoc the readMore */
+.readMore::before{
+  content:"";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: rgb(236, 199, 231);
+  transition: all 0.3s;
+  z-index: -1;
+}
+.readMore:hover::before{
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
